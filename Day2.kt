@@ -5,15 +5,15 @@ data class Game(val id: Int, val rounds: List<Round>) {
         return rounds.all(predicate)
     }
     fun power() : Int {
-        return minReds() * minGreens() * minBlues()
+        return maxnReds() * maxGreens() * maxBlues()
     }
-    private fun minReds() : Int {
+    private fun maxnReds() : Int {
         return rounds.maxOfOrNull { it.red } ?: 0
     }
-    private fun minGreens() : Int {
+    private fun maxGreens() : Int {
         return rounds.maxOfOrNull { it.green } ?: 0
     }
-    private fun minBlues() : Int {
+    private fun maxBlues() : Int {
         return rounds.maxOfOrNull { it.blue } ?: 0
     }
 }
